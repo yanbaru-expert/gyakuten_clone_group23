@@ -1,0 +1,11 @@
+/*
+ *= require_tree .
+ *= require_self
+ */
+.base-container {
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+@import "bootstrap/scss/bootstrap";
