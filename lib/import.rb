@@ -8,14 +8,6 @@ class Import
     # row は CSV::Row クラスである。これはモデルの引数として渡せないのでハッシュに変換しておく。
     list = []
     CSV.foreach(path, headers: true) { |row| list << row.to_h }
-    list
-    puts "インポート処理を開始"
-    # インポートができなかった場合の例外処理
-    begin
-      AwsTexts.create!(list)
-      puts "インポート完了!!"
-    rescue ActiveModel::UnknownAttributeError => invalid
-      puts "インポートに失敗：UnknownAttributeError"
-    end
+    return list
   end
 end
