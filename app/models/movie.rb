@@ -1,3 +1,3 @@
 class Movie < ApplicationRecord
-    validates :title, :content, presence: true
+    validates :title, :url, presence: true
 end
