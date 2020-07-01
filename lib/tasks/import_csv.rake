@@ -13,9 +13,9 @@ namespace :import_csv do
       puts "インポートに失敗：UnknownAttributeError"
     end
   end
-  
+
   desc "動画教材データをインポートするタスク"
-  
+
   task movies: :environment do
     list = Import.csv_data(path: "db/csv_data/movie_data.csv" )
     puts "インポート処理を開始"
@@ -26,6 +26,19 @@ namespace :import_csv do
       puts "インポートに失敗：UnknownAttributeError"
     end
   end
-  
-end
 
+  # rake import_csv:questions
+  desc "質問集をインポートするタスク"
+  
+  task questions: :environment do
+    list = Import.csv_data(path: "db/csv_data/question_data.csv" )
+    puts "インポート処理を開始"
+    begin
+      Question.create!(list)
+      puts "インポート完了"
+    rescue ActiveModel::UnknownAttributeError => invalid
+      puts "インポートに失敗：UnknownAttributeError"
+    end
+  end
+
+end
