@@ -18,3 +18,7 @@
 .alert-alert {
   @extend .alert-danger;
 }
+
+body {
+  padding-top: 80px;
+}
