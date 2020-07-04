@@ -1,0 +1,25 @@
+
+<div class="questions-container">
+  <% @questions.each do |question|%>
+    <a href="#">
+      <div class="question">
+        <div class="row">
+          <div class="col-md-7">
+            <div class="title-container">
+              <p><%= question.title.truncate(50) %></p>
+            </div>
+          </div>
+          <div class="col-md-5">
+          <div class="info text-right">
+            <p>質問日 <%= question.created_at.strftime('%Y年%m月%d日') %></p>
+            <p>Views</p>
+          </div>
+
+          </div>
+        </div>
+      </div>
+    </a>
+  <% end %>
+</div>
+
+
