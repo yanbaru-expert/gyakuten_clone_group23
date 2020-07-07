@@ -2,7 +2,7 @@
   display: grid;
   grid-template-rows: 450px 450px 450px 450px 450px 450px 450px 450px 450px 450px 450px ;
   grid-template-columns: 370px 370px 370px;
-  margin: 0 auto 0 -160px;
+  margin: 0 auto;
 }
 
 .m_title {
@@ -13,10 +13,6 @@
   border: 1px solid black;
   margin: 10px 17px;
   border-radius: 5px;
-}
-
-iframe {
-  margin: 0 20px 0 0;
 }
 
 .btn {
