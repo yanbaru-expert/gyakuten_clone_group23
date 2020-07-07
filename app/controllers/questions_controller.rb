@@ -4,7 +4,12 @@ class QuestionsController < ApplicationController
     @question = Question.new
   end
   def create
-    Question.create(question_params)
+    @question = Question.create(question_params)
+    if @question.save
+      flash[:notice] = '投稿完了'
+    else 
+      flash[:notice] = '投稿失敗'
+    end
     redirect_to questions_path
   end
 
