@@ -20,9 +20,7 @@
     </header>
     <%= render  "layouts/flash" %>
     <main>
-      <div class="base-container">
-      </div>
-      <div class="contents-container">
+      <div class="base-container<%= ' movie-container' if MoviesController %>">
     <%= yield %>
       </div>
     </main>
