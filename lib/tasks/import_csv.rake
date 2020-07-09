@@ -7,7 +7,7 @@ namespace :import_csv do
     puts "インポート処理を開始"
     # インポートができなかった場合の例外処理
     begin
-      AwsTexts.create!(list)
+      AwsText.create!(list)
       puts "インポート完了!!"
     rescue ActiveModel::UnknownAttributeError => invalid
       puts "インポートに失敗：UnknownAttributeError"
@@ -29,7 +29,7 @@ namespace :import_csv do
 
   # rake import_csv:questions
   desc "質問集をインポートするタスク"
-  
+
   task questions: :environment do
     list = Import.csv_data(path: "db/csv_data/question_data.csv" )
     puts "インポート処理を開始"
