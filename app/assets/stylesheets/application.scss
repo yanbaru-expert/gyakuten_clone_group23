@@ -1,3 +1,9 @@
+@import "bootstrap/scss/bootstrap";
+@import "layouts/navbar";
+@import "questions/index";
+@import "movies";
+
+
 .base-container {
   max-width: 768px;
   margin: 0 auto;
@@ -8,9 +14,6 @@
   max-width: 1170px;
 }
 
-@import "bootstrap/scss/bootstrap";
-@import "layouts/navbar";
-@import "questions/index";
 
 .alert-notice {
   @extend .alert-success;
@@ -25,5 +28,6 @@ body {
 }
 
 .pagination {
-  justify-content: center;
+  justify-content: senter !important;  
+  // margin-left: 200px;
 }
