@@ -1,3 +1,3 @@
 class AwsText < ApplicationRecord
-  validates :title, :url, presence: true
+  validates :title, :content, presence: true
 end
