@@ -6,7 +6,7 @@
       <% if @movies.first_page? %>
         <p class="m_title"><%= "Lv.#{i+1} : #{movie.title}" %></p>
       <% else %>
-        <p class="m_title"><%= "Lv.#{i+18} : #{movie.title}" %></p>
+        <p class="m_title"><%= "Lv.#{@movies.offset_value+i+1} : #{movie.title}" %></p>
       <% end %>
     </div>
   <% end %>
