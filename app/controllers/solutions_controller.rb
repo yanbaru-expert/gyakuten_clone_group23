@@ -1,7 +1,9 @@
 class SolutionsController < ApplicationController
-  def show
-    @solution = Solution.new
+  def create
+
   end
 
- 
+  def show
+    う
+  end
 end
