@@ -4,6 +4,6 @@ class SolutionsController < ApplicationController
   end
 
   def show
-    う
+
   end
 end
