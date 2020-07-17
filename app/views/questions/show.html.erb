@@ -1,5 +1,9 @@
-<h5>【質問】</h5>
-<p><%= @question.title %></p>
-<hr>
-<h5>【詳細】</h5>
-<p><%= @question.detail %></p>
+<div class ="q-container">
+  <h5>【質問】</h5>
+  <p><%= @question.title %></p>
+  <hr>
+  <h5>【詳細】</h5>
+  <p>
+    <%= markdown(@question.detail).html_safe %>
+  </p>
+</div>
