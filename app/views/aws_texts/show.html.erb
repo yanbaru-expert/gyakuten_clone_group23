@@ -1,0 +1,7 @@
+<%
+  text =<<~TEXT
+    #{@aws_text.content }
+  TEXT
+%>
+
+<%= markdown(text).html_safe %>
