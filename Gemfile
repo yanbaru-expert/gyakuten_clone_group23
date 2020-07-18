@@ -17,6 +17,8 @@ gem 'devise-i18n'
 gem 'devise-bootstrap-views'
 gem 'activeadmin'
 gem 'kaminari'
+gem 'redcarpet', '~> 2.3.0'
+gem 'coderay'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
