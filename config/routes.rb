@@ -8,4 +8,6 @@ Rails.application.routes.draw do
 
   resources :aws_texts, only: [:index, :show]
 
+  resources :lines, only: [:indes, :show]
+
 end
