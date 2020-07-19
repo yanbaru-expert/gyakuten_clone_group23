@@ -4,7 +4,11 @@ module ApplicationHelper
 
   class HTMLwithCoderay < Redcarpet::Render::HTML
     def block_code(code, language)
+<<<<<<< HEAD
       language = language.split(':')[0] if language.present?
+=======
+      language = language.split(':')[0] if language.preset?
+>>>>>>> master
 
       case language.to_s
       when 'rb'
@@ -29,13 +33,13 @@ module ApplicationHelper
     html_render = HTMLwithCoderay.new(
       filter_html: true,
       hard_wrap: true,
-      link_attributes: { rel: 'nofollow', target: "_blank" }
+      link_attributes: { rel: 'nofollow', target: "_blank"}
     )
     options = {
       autolink: true,
       space_after_headers: true,
       no_intra_emphasis: true,
-      fenced_code_blocks: true,
+      fenced_code_block: true,
       tables: true,
       hard_wrap: true,
       xhtml: true,
@@ -45,4 +49,4 @@ module ApplicationHelper
     markdown = Redcarpet::Markdown.new(html_render, options)
     markdown.render(text)
   end
-end
+end 
