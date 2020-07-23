@@ -1,5 +1,4 @@
 class QuestionsController < ApplicationController
-
   def index
     @questions = Question.order(id: :DESC) 
     @question = Question.new
@@ -19,13 +18,11 @@ class QuestionsController < ApplicationController
   def show
     @question = Question.find(params[:id])
     @solution = Solution.new
-    @solutions = Solution.all
-
+    @solutions = Solution.where(question_id: params[:id])
   end
 
   private
   def question_params
     params.require(:question).permit(:title, :detail)
   end
-
 end

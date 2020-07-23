@@ -1,4 +1,4 @@
 class Solution < ApplicationRecord
   belongs_to :question
-  validates :title, :detail, presence: true
+  validates :answer, presence: true
 end

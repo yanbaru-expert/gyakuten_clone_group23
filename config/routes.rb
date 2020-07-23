@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   devise_for :users
   root "movies#index"
   resources :questions do
-    resources :solutions, only: [:index,:create]
+    resources :solutions, only: [:create]
   end
   
   resources :aws_texts, only: [:index, :show]
