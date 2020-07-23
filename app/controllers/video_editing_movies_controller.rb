@@ -1,5 +1,5 @@
 class VideoEditingMoviesController < ApplicationController
   def index
-    @ve_movies = Ve_movie.all
+    @video_editing_movies = VideoEditingMovie.all
   end
 end
