@@ -1,0 +1,9 @@
+<div id="container">
+  <% @video_editing_movies.each.with_index do |video_editing_movie, i| %>
+    <div class="bdr">
+      <iframe width="335" height="210" src="<%= video_editing_movie.url %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <a class="btn btn-secondary btn-block" href="#">視聴済みにする</a>
+      <p class="vem-title"><%= "#{video_editing_movie.title}" %></p>
+    </div>
+  <% end %>
+</div>
