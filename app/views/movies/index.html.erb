@@ -1,10 +1,15 @@
 <div id="container">
+  
   <% @movies.each.with_index(@movies.offset_value + 1) do |movie, i| %>
-    <div class="bdr">
-      <iframe width="335" height="210" src="<%= movie.url %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      <a class="btn btn-secondary btn-block" href="#">視聴済みにする</a>
-      <p class="m_title"><%= "Lv.#{i} : #{movie.title}" %></p>
-    </div>
+    <% if movie.category = params[:category] %>
+      <div class="bdr">
+        <iframe width="335" height="210" src="<%= movie.url %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <a class="btn btn-secondary btn-block" href="#">視聴済みにする</a>
+        <p class="m_title"><%= "Lv.#{i} : #{movie.title}" %></p>
+      </div>
+      
+    <% end %>
+
   <% end %>
 </div>
 <%= paginate @movies %>
