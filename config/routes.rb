@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   resources :solutions, only: [:create]
   resources :aws_texts, only: [:index, :show]
   resources :lines, only: [:index, :show]
+  resources :texts, only: [:index, :show]
 
 end

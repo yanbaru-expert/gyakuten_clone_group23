@@ -1,0 +1,18 @@
+<div class="row row-cols-1 row-cols-md-3">
+  <% @texts.each do |text| %>
+  <div class="col mb-4">
+    <div class="card h-100 position:relative">
+      <%= link_to text, class:"stretched-link" do %>
+        <img src="..." class="card-img-top" alt="...">
+      <% end %>
+      <div class="card-header text-white bg-secondary mb-3 text-center" >読破済みにする</div>
+      <div class="card-body">
+        <p class="card-text">
+          <%= text.title %><br>
+          【<%= text.genre %>】
+        </p>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>

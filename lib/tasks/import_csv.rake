@@ -53,5 +53,19 @@ namespace :import_csv do
       puts "インポートに失敗：UnknownAttributeError"
     end
   end
-  
+
+  # rake import_csv:texts
+  desc "テキスト教材をインポートするタスク"
+
+  task texts: :environment do
+    list = Import.csv_data(path: "db/csv_data/text_data.csv" )
+    puts "インポート処理を開始"
+    begin
+      Text.create!(list)
+      puts "インポート完了"
+    rescue ActiveModel::UnknownAttributeError => invalid
+      puts "インポートに失敗：UnknownAttributeError"
+    end
+  end
+
 end
