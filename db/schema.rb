@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2020_07_24_053606) do
     t.text "body"
     t.string "resource_type"
     t.bigint "resource_id"
+    
     t.string "author_type"
     t.bigint "author_id"
     t.datetime "created_at", precision: 6, null: false
@@ -39,14 +40,6 @@ ActiveRecord::Schema.define(version: 2020_07_24_053606) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_admin_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
-  end
-
-  create_table "all_movies", force: :cascade do |t|
-    t.string "category"
-    t.string "title"
-    t.string "url"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "aws_texts", force: :cascade do |t|
@@ -104,13 +97,6 @@ ActiveRecord::Schema.define(version: 2020_07_24_053606) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  end
-
-  create_table "video_editing_movies", force: :cascade do |t|
-    t.string "title"
-    t.string "url"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
 end
