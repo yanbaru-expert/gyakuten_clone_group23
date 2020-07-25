@@ -1,7 +1,7 @@
 class MoviesController < ApplicationController
   
   def index
-    if params[:category].in? ['Php', 'Movie', 'Talk', 'Marketing', 'Money', 'Writing', 'Live']
+    if params[:category].in? (['Php', 'Movie', 'Talk', 'Marketing', 'Money', 'Writing', 'Live'])
       movie = Movie.where(category: params[:category])
       @movies = movie.page(params[:page]).per(18)
     else
