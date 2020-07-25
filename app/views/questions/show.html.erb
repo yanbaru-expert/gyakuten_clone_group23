@@ -7,6 +7,7 @@
     <%= markdown(@question.detail).html_safe %>
   </div>
   <hr>
+  <h5>【回答】</h5>
   <% if(@solutions.present?)%>
     <div class="markdown-container">
       <% @solutions.each do |solution|%>
