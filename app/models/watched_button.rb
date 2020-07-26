@@ -1,5 +1,3 @@
 class WatchedButton < ApplicationRecord
-  validates_uniqueness_of :movie_title, scorp: :user_email
+  validates_uniqueness_of :movie_id, scorp: :user_id
 end
-
-
