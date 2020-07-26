@@ -6,4 +6,23 @@
   <div class="markdown-container">
     <%= markdown(@question.detail).html_safe %>
   </div>
+  <hr>
+  <h5>【回答】</h5>
+  <% if(@solutions.present?)%>
+    <div class="markdown-container">
+      <% @solutions.each do |solution|%>
+          <%= markdown(solution.answer).html_safe %>
+      <% end %>
+    </div>
+  <% end %>
+
+
+  <h5>回答投稿</h5>
+  <%= form_with model: [@question,@solution], local: true do |f| %>
+    <div class="form-group">
+      <%= f.label :answer, "【回答】", class: "control-label" %>
+      <%= f.text_area :answer, class: "form-control", rows:5 %>
+    </div>
+    <%= f.submit "送信", class: "btn btn-primary btn-block btn-lg", data: {confirm: "新規投稿しますか？"}%>
+  <% end %>
 </div>

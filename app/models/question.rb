@@ -1,4 +1,4 @@
 class Question < ApplicationRecord
-  has_one :solution
+  has_many :solutions
   validates :title, :detail, presence: true
 end
