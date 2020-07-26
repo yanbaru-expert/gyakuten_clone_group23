@@ -3,7 +3,11 @@
   <% @movies.each.with_index(@movies.offset_value + 1) do |movie, i| %>
     <div class="bdr">
       <iframe width="335" height="210" src="<%= movie.url %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      <a class="btn btn-secondary btn-block" href="#">視聴済みにする</a>
+      <% if movie.watched_by?(current_user) %>
+        <a class="btn btn-primary btn-block" data-remote="true" rel="nofollow" data-method="delete" href="#">視聴済みを解除</a>
+      <% else %>
+        <a class="btn btn-secondary btn-block" href="#">視聴済みにする</a>
+      <% end %>
       <% if movie.category.in? ['Php', 'Talk', 'Money', 'Writing', 'Live', 'Movie'] %>
         <p class="m_title"><%= "#{movie.title}" %></p>
       <% else %>
@@ -13,4 +17,3 @@
   <% end %>
 </div>
 <%= paginate @movies %>
-
