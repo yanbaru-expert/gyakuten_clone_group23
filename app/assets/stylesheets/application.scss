@@ -1,8 +1,10 @@
 @import "bootstrap/scss/bootstrap";
 @import "layouts/navbar";
 @import "questions/index";
-@import "movies";
 @import "questions/show";
+@import "movies";
+@import "lines/index";
+@import "lines/show";
 
 
 .base-container {
@@ -30,4 +32,8 @@ body {
 
 .pagination {
   justify-content: center;
+}
+
+.card-body {
+  color: black;
 }

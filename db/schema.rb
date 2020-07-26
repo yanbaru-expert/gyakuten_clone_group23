@@ -10,8 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_23_152221) do
 
+ActiveRecord::Schema.define(version: 2020_07_24_053606) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2020_07_23_152221) do
     t.text "body"
     t.string "resource_type"
     t.bigint "resource_id"
+    
     t.string "author_type"
     t.bigint "author_id"
     t.datetime "created_at", precision: 6, null: false
@@ -48,11 +49,20 @@ ActiveRecord::Schema.define(version: 2020_07_23_152221) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "lines", force: :cascade do |t|
+    t.string "genre"
+    t.string "title"
+    t.text "contents"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "movies", force: :cascade do |t|
     t.string "title"
     t.string "url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "category"
   end
 
   create_table "questions", force: :cascade do |t|
@@ -68,6 +78,14 @@ ActiveRecord::Schema.define(version: 2020_07_23_152221) do
     t.bigint "question_id"
     t.text "answer"
     t.index ["question_id"], name: "index_solutions_on_question_id"
+  end
+
+  create_table "texts", force: :cascade do |t|
+    t.string "genre"
+    t.string "title"
+    t.text "content"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|

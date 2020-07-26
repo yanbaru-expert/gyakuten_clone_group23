@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top base-color">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top base-color<%= ' bg-success' if controller_name == 'lines'%>">
   <a class="navbar-brand" href="/">Gyakuten</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
   <span class="navbar-toggler-icon"></span>
@@ -18,25 +18,25 @@
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link active" href="#">PHP講座</a>
+        <%= link_to "PHP講座", movies_path(category: "Php"), class: "nav-link active" %>
       </li>
       <li class="nav-item">
-        <a class="nav-link active" href="#">対談</a>
+        <%= link_to "対談", movies_path(category: "Talk"), class: "nav-link active" %>
       </li>
       <li class="nav-item">
-        <a class="nav-link active" href="#">情報発信</a>
+        <%= link_to "情報発信", movies_path(category: "Marketing"), class: "nav-link active" %>
       </li>
       <li class="nav-item">
-        <a class="nav-link active" href="#">動画編集講座</a>
+        <%= link_to "動画編集講座", movies_path(category: "Movie"), class: "nav-link active" %>
       </li>
       <li class="nav-item">
-        <a class="nav-link active" href="#">ライティング講座</a>
+        <%= link_to "ライティング講座", movies_path(category: "Writing"), class: "nav-link active" %>
       </li>
       <li class="nav-item">
-        <a class="nav-link active" href="#">マネタイズ講座</a>
+        <%= link_to "マネタイズ講座", movies_path(category: "Money"), class: "nav-link active" %>
       </li>
       <li class="nav-item">
-        <a class="nav-link active" href="#">LINE＠</a>
+        <a class="nav-link active" href="/lines">LINE＠</a>
       </li>
     <% if user_signed_in? %>
       <li class="nav-item">
