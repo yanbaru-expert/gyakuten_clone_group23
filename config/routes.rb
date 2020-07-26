@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   devise_for :users
   root "movies#index"
   resources :movies, only: [:index] do
-    resources :watched_buttons only: [:create, :destroy]
+    resources :watched_buttons, only: [:create, :destroy]
   end
 
   resources :questions
@@ -13,5 +13,4 @@ Rails.application.routes.draw do
   resources :aws_texts, only: [:index, :show]
   resources :lines, only: [:index, :show]
   resources :texts, only: [:index, :show]
-
 end
