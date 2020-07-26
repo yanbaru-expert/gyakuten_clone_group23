@@ -11,29 +11,29 @@
           </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="/">動画教材</a>
-          <%=link_to "テキスト教材", texts_path, class:"dropdown-item" %>
-          <%=link_to "AWS講座", aws_texts_path, class:"dropdown-item" %>
-          <a class="dropdown-item" href="#">ライブコーディング</a>
+          <a class="dropdown-item" href="#">テキスト教材</a>
+          <%= link_to "AWS講座", aws_texts_path, class:"dropdown-item" %>
+          <%= link_to "ライブコーディング", movies_path(category: "Live"), class:"dropdown-item" %>
           <a class="dropdown-item" href="questions/">質問集</a>
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link active" href="#">PHP講座</a>
+        <%= link_to "PHP講座", movies_path(category: "Php"), class: "nav-link active" %>
       </li>
       <li class="nav-item">
-        <a class="nav-link active" href="#">対談</a>
+        <%= link_to "対談", movies_path(category: "Talk"), class: "nav-link active" %>
       </li>
       <li class="nav-item">
-        <a class="nav-link active" href="#">情報発信</a>
+        <%= link_to "情報発信", movies_path(category: "Marketing"), class: "nav-link active" %>
       </li>
       <li class="nav-item">
-        <a class="nav-link active" href="#">動画編集講座</a>
+        <%= link_to "動画編集講座", movies_path(category: "Movie"), class: "nav-link active" %>
       </li>
       <li class="nav-item">
-        <a class="nav-link active" href="#">ライティング講座</a>
+        <%= link_to "ライティング講座", movies_path(category: "Writing"), class: "nav-link active" %>
       </li>
       <li class="nav-item">
-        <a class="nav-link active" href="#">マネタイズ講座</a>
+        <%= link_to "マネタイズ講座", movies_path(category: "Money"), class: "nav-link active" %>
       </li>
       <li class="nav-item">
         <a class="nav-link active" href="/lines">LINE＠</a>
