@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_26_044317) do
+ActiveRecord::Schema.define(version: 2020_07_26_074336) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -106,18 +106,11 @@ ActiveRecord::Schema.define(version: 2020_07_26_044317) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  create_table "video_editing_movies", force: :cascade do |t|
-    t.string "title"
-    t.string "url"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "watched_buttons", force: :cascade do |t|
-    t.string "user_email"
-    t.string "movie_title"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
+    t.integer "movie_id"
   end
 
 end

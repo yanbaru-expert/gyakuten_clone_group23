@@ -3,7 +3,7 @@
   <% @movies.each.with_index(@movies.offset_value + 1) do |movie, i| %>
     <div class="bdr">
       <iframe width="335" height="210" src="<%= movie.url %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      <% if movie.watched_by?(current_user) %>
+      <% if movie.watched_by?(current_user)
         <a class="btn btn-primary btn-block" data-remote="true" rel="nofollow"><%= link_to "視聴済みを解除", movie_watched_buttons_path(movie.title), method: :delete %></a>
       <% else %>
         <a class="btn btn-secondary btn-block" data-remote="true" rel="nofollow"<%= link_to "視聴済みにする", movie_watched_buttons_path(movie.title), method: :post %>></a>
