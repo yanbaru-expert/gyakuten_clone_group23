@@ -7,9 +7,10 @@ Rails.application.routes.draw do
   resources :movies, only: [:index] do
     resource :watched_buttons, only: [:create, :destroy]
   end
-
-  resources :questions
-  resources :solutions, only: [:create]
+  resources :movies, only: [:index]
+  resources :questions do
+    resources :solutions, only: [:create]
+  end
   resources :aws_texts, only: [:index, :show]
   resources :lines, only: [:index, :show]
   resources :texts, only: [:index, :show]

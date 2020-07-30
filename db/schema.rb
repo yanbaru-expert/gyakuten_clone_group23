@@ -80,10 +80,11 @@ ActiveRecord::Schema.define(version: 2020_07_28_215019) do
   end
 
   create_table "solutions", force: :cascade do |t|
-    t.string "title"
-    t.text "detail"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.text "answer"
+    t.bigint "question_id"
+    t.index ["question_id"], name: "index_solutions_on_question_id"
   end
 
   create_table "texts", force: :cascade do |t|
@@ -122,6 +123,7 @@ ActiveRecord::Schema.define(version: 2020_07_28_215019) do
     t.index ["user_id"], name: "index_watched_buttons_on_user_id"
   end
 
+  add_foreign_key "solutions", "questions"
   add_foreign_key "watched_buttons", "movies"
   add_foreign_key "watched_buttons", "users"
 end
