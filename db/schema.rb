@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_24_053606) do
+ActiveRecord::Schema.define(version: 2020_07_26_044317) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(version: 2020_07_24_053606) do
     t.text "body"
     t.string "resource_type"
     t.bigint "resource_id"
-    
     t.string "author_type"
     t.bigint "author_id"
     t.datetime "created_at", precision: 6, null: false
@@ -73,10 +72,10 @@ ActiveRecord::Schema.define(version: 2020_07_24_053606) do
   end
 
   create_table "solutions", force: :cascade do |t|
+    t.text "answer"
+    t.bigint "question_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "question_id"
-    t.text "answer"
     t.index ["question_id"], name: "index_solutions_on_question_id"
   end
 
@@ -100,5 +99,16 @@ ActiveRecord::Schema.define(version: 2020_07_24_053606) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "watched_buttons", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "movie_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["movie_id"], name: "index_watched_buttons_on_movie_id"
+    t.index ["user_id"], name: "index_watched_buttons_on_user_id"
+  end
+
   add_foreign_key "solutions", "questions"
+  add_foreign_key "watched_buttons", "movies"
+  add_foreign_key "watched_buttons", "users"
 end

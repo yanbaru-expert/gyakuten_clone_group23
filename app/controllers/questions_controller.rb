@@ -25,4 +25,5 @@ class QuestionsController < ApplicationController
   def question_params
     params.require(:question).permit(:title, :detail)
   end
+
 end
